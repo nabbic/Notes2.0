@@ -8,10 +8,10 @@ using System.Text;
 using System.Windows.Forms;
 using System.Globalization;
 using System.Threading;
-
+using WeifenLuo.WinFormsUI.Docking;
 namespace NotesApp
 {
-    public partial class codeBlueform : Form
+    public partial class codeBlueform : DockContent
     {
         private string _custName;
         private string _custBtn;

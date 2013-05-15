@@ -32,7 +32,7 @@
     <WebPage>install.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>15</ApplicationRevision>
+    <ApplicationRevision>17</ApplicationRevision>
     <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -152,6 +152,18 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="logForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="logForm.Designer.cs">
+      <DependentUpon>logForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="textWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="textWindow.Designer.cs">
+      <DependentUpon>textWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyLogger.cs" />
     <Compile Include="fairpoint.cs">
       <SubType>Form</SubType>
@@ -233,6 +245,12 @@
     <EmbeddedResource Include="fairpoint.resx">
       <DependentUpon>fairpoint.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="logForm.resx">
+      <DependentUpon>logForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="textWindow.resx">
+      <DependentUpon>textWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fpneBrowser.resx">
       <DependentUpon>fpneBrowser.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,7 +298,7 @@
   <ItemGroup>
     <Content Include="custName.gif" />
     <Content Include="note.ico" />
-    <Content Include="noteslog.txt" />
+    <EmbeddedResource Include="noteslog.txt" />
     <None Include="Resources\552.png" />
     <None Include="Resources\397.jpg" />
     <None Include="Resources\Jeremybennett_Sticky_Note_Pad_And_Pencil_clip_art_medium.png" />
@@ -321,7 +339,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_UpdateAssemblyVersion="True" BuildVersion_UpdateFileVersion="True" />
+      <UserProperties BuildVersion_UpdateFileVersion="True" BuildVersion_UpdateAssemblyVersion="True" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

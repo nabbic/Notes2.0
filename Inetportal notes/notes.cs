@@ -25,12 +25,14 @@ namespace NotesApp
         private string _tshootText;
         private string _otherNotes;
         private string _modemText;
+
         public notesForm()
         {
             InitializeComponent();
             
     
         }
+
         public string CustName
         {
             get
@@ -100,7 +102,7 @@ namespace NotesApp
         {
             get
             {
-                return _modemText;
+                return custModemText.Text;
             }
             set
             {
@@ -111,18 +113,11 @@ namespace NotesApp
 
         bool outage = true;
         string checkBoxesLine;
-        private void notesForm_Load(object sender, EventArgs e)
-        {
-
-            
-        }
         //Generate to output and textfile
         private void save_button_Click(object sender, EventArgs e)
         {
-            
             //Starts process to process the lights checkboxes
              checkBoxesLine = "\u2022 LIGHTS: ";
-
             foreach (Control control in pnlCheckBoxes.Controls)
             {
                 if (control is CheckBox)
@@ -133,11 +128,7 @@ namespace NotesApp
                     {
                         string checkBoxId = (string)checkBox.Tag;
                         checkBoxesLine += string.Format("{0}, ", checkBoxId);
-                        checkBoxes = checkBoxesLine;
-                    }
-                }
-            }
-
+                        checkBoxes = checkBoxesLine;}}}
             //Starts the Stringbuilder
             System.Text.StringBuilder strBuilder = new System.Text.StringBuilder();
             {
@@ -146,8 +137,6 @@ namespace NotesApp
                 {
                     custCbrText.Text = cbrSame;
                 }
-
-
                 //Writes textboxes to the stringbuilder
                 strBuilder.AppendLine("\u2022 CX NAME: " + custNameText.Text);
                 strBuilder.AppendLine("\u2022 BTN: " + custBtnText.Text);
@@ -155,12 +144,9 @@ namespace NotesApp
 
                 if (noModemChkbox.Checked)
                 {
-                    
-
                 }
                 else
                 {
-                    
                     strBuilder.AppendLine("\u2022 MODEM: " + custModemText.Text);
                     //Statements to write checkboxes to stringbuilder
 
@@ -169,7 +155,6 @@ namespace NotesApp
                     strBuilder.AppendLine();
                 }
                 //Continues textboxes to stringbuilder
-                
                 strBuilder.AppendLine("\u2022 TROUBLESHOOTING: " + tShootText.Text);
                 strBuilder.AppendLine();
                 if (outage == true)
@@ -178,34 +163,26 @@ namespace NotesApp
                 strBuilder.AppendLine();
                 strBuilder.AppendLine("\u2022 OTHER NOTES: " + otherNotesText.Text);
                 }
-                
                 notesViewText.Text = strBuilder.ToString();
-
                 //Copy output to clipboard
                 System.Windows.Forms.Clipboard.SetText(notesViewText.Text);
-
-
                 // create a writer and open the file
-                TextWriter tw = new StreamWriter("noteslog.txt", true);
+                //TextWriter tw = new StreamWriter("noteslog.txt");
                 // write a line of text to the file
-                tw.WriteLine("\u2022 CX NAME: " + custNameText.Text);
-                tw.WriteLine("\u2022 BTN: " + custBtnText.Text);
-                tw.WriteLine("\u2022 CBR: " + custCbrText.Text);
-                tw.WriteLine("\u2022 MODEM: " + custModemText.Text);
-                tw.WriteLine(checkBoxesLine);
-                tw.WriteLine("\u2022 TROUBLESHOOTING: " + tShootText.Text);
-                tw.WriteLine("\u2022 SERVICES OFFERED: " + svcsOfferedText.Text);
-                tw.WriteLine("\u2022 OTHER NOTES: " + otherNotesText.Text);
-                tw.WriteLine("*******************************");
-                // close the stream
-                tw.Close();
-
-
-
-
-            }
-
-        }
+                using (TextWriter tr = new StreamWriter(new FileStream(AppDomain.CurrentDomain.BaseDirectory + "noteslog.txt", FileMode.Append, FileAccess.Write, FileShare.ReadWrite)))
+                {
+                    {
+                        tr.WriteLine("\u2022 CX NAME: " + custNameText.Text);
+                        tr.WriteLine("\u2022 BTN: " + custBtnText.Text);
+                        tr.WriteLine("\u2022 CBR: " + custCbrText.Text);
+                        tr.WriteLine("\u2022 MODEM: " + custModemText.Text);
+                        tr.WriteLine(checkBoxesLine);
+                        tr.WriteLine("\u2022 TROUBLESHOOTING: " + tShootText.Text);
+                        tr.WriteLine("\u2022 SERVICES OFFERED: " + svcsOfferedText.Text);
+                        tr.WriteLine("\u2022 OTHER NOTES: " + otherNotesText.Text);
+                        tr.WriteLine("*******************************");
+                        // close the stream
+                        tr.Close();}}}}
         //Button to reset entire form
         private void reset_form_button_Click(object sender, EventArgs e)
         {
@@ -230,17 +207,11 @@ namespace NotesApp
                 notesViewText.Clear();
                 cbrSameCbx.Checked = false;
                 this.outage = true;
-                
             }
             catch (Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.ToString());
-
-
-
             }
-
-
         }
         //Context menu on rich text that copies
         private void copy_context_Click(object sender, EventArgs e)
@@ -258,19 +229,6 @@ namespace NotesApp
             else
                 System.Windows.Forms.MessageBox.Show("Please insert the customer's billing number!", "Information Required");
         }
-        //Open the notes Log
-        private void viewLogToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("noteslog.txt");
-        }
-        //Clear the notes log
-        private void clearLogToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            FileInfo fi = new FileInfo("noteslog.txt");
-            TextWriter tw = new StreamWriter(fi.Open(FileMode.Truncate));
-        }
-        
         // Open Fairpoint form
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
@@ -300,11 +258,6 @@ namespace NotesApp
 
             fairpoint fpneForm = new fairpoint(this);
             fpneForm.Show();
-        }
-        //Open and send data to code blue form
-        private void codeBlueToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
         //Checkbox to check if CBR and BTN are the same
         private void cbrSameCbx_CheckedChanged(object sender, EventArgs e)
@@ -368,22 +321,7 @@ namespace NotesApp
              noModemChkbox.Checked = true;
 
         }
-        //Open "About Me" form
-        private void helpToolStripButton_Click(object sender, EventArgs e)
-        {
-                    //Open the help me menu
-            aboutForm aboutForm = new aboutForm();
-            aboutForm.Show();
-        }
-        private void toolStripButton1_Click_2(object sender, EventArgs e)
-        {
-            parentForm testShow = new parentForm();
-            testShow.Show();
-        }
-
     }
-
-
 }
 
 

@@ -58,12 +58,8 @@
             this.cbrTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.frontierButton = new System.Windows.Forms.ToolStripDropDownButton();
-            this.codeBlueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.faitpointFormButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.viewLogButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.clearLogButton = new System.Windows.Forms.ToolStripMenuItem();
             this.copied_status = new System.Windows.Forms.ToolStripLabel();
             this.noModemChkbox = new System.Windows.Forms.CheckBox();
             this.tshootingLabel = new System.Windows.Forms.Label();
@@ -402,7 +398,6 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.frontierButton,
             this.faitpointFormButton,
-            this.toolStripSplitButton1,
             this.copied_status});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -415,7 +410,6 @@
             // 
             this.frontierButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.frontierButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.codeBlueToolStripMenuItem,
             this.outageToolStripMenuItem});
             this.frontierButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.frontierButton.Name = "frontierButton";
@@ -423,17 +417,10 @@
             this.frontierButton.Text = "Frontier";
             this.frontierButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             // 
-            // codeBlueToolStripMenuItem
-            // 
-            this.codeBlueToolStripMenuItem.Name = "codeBlueToolStripMenuItem";
-            this.codeBlueToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
-            this.codeBlueToolStripMenuItem.Text = "Code Blue";
-            this.codeBlueToolStripMenuItem.Click += new System.EventHandler(this.codeBlueToolStripMenuItem_Click);
-            // 
             // outageToolStripMenuItem
             // 
             this.outageToolStripMenuItem.Name = "outageToolStripMenuItem";
-            this.outageToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.outageToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.outageToolStripMenuItem.Text = "Outage";
             this.outageToolStripMenuItem.Click += new System.EventHandler(this.outageToolStripMenuItem_Click);
             // 
@@ -445,31 +432,6 @@
             this.faitpointFormButton.Size = new System.Drawing.Size(58, 22);
             this.faitpointFormButton.Text = "Fairpoint";
             this.faitpointFormButton.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripSplitButton1
-            // 
-            this.toolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewLogButton,
-            this.clearLogButton});
-            this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
-            this.toolStripSplitButton1.Size = new System.Drawing.Size(40, 22);
-            this.toolStripSplitButton1.Text = "Log";
-            // 
-            // viewLogButton
-            // 
-            this.viewLogButton.Name = "viewLogButton";
-            this.viewLogButton.Size = new System.Drawing.Size(124, 22);
-            this.viewLogButton.Text = "View Log";
-            this.viewLogButton.Click += new System.EventHandler(this.viewLogToolStripMenuItem_Click);
-            // 
-            // clearLogButton
-            // 
-            this.clearLogButton.Name = "clearLogButton";
-            this.clearLogButton.Size = new System.Drawing.Size(124, 22);
-            this.clearLogButton.Text = "Clear Log";
-            this.clearLogButton.Click += new System.EventHandler(this.clearLogToolStripMenuItem_Click);
             // 
             // copied_status
             // 
@@ -697,10 +659,11 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(336, 603);
             this.CloseButton = false;
+            this.CloseButtonVisible = false;
             this.Controls.Add(this.layoutTable);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HideOnClose = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -710,7 +673,6 @@
             this.TabText = "Notes";
             this.Text = "Notes";
             this.TransparencyKey = System.Drawing.Color.GreenYellow;
-            this.Load += new System.EventHandler(this.notesForm_Load);
             this.pnlCheckBoxes.ResumeLayout(false);
             this.pnlCheckBoxes.PerformLayout();
             this.notesViewContext.ResumeLayout(false);
@@ -757,10 +719,6 @@
         private System.Windows.Forms.CheckBox noModemChkbox;
         private System.Windows.Forms.CheckBox activityChkbox;
         private System.Windows.Forms.ToolStripDropDownButton frontierButton;
-        private System.Windows.Forms.ToolStripMenuItem codeBlueToolStripMenuItem;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripSplitButton1;
-        private System.Windows.Forms.ToolStripMenuItem viewLogButton;
-        private System.Windows.Forms.ToolStripMenuItem clearLogButton;
         private System.Windows.Forms.Label tshootingLabel;
         public ExtTextBox tShootText;
         private System.Windows.Forms.ToolStripMenuItem outageToolStripMenuItem;

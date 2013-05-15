@@ -238,6 +238,7 @@
             this.Controls.Add(this.cust_cbr_label);
             this.Controls.Add(this.cust_wtn_label);
             this.Controls.Add(this.reasonCombo);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "codeBlueform";

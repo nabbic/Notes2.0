@@ -131,7 +131,15 @@ PATCH NOTES
 -Added FPNE Login (Dataview is kind of annoying, working on that)
 -Changed installer
 
-TODO for next update:
+05/15/2013 Version 2.0.18
+-Several GUI Changes
+-Added log to new format.
+-Added notepad
+-Code blue now works properly
+-FPNE Tr works
+
+
+TODO for future updates:
 *******************************
 -Finish converting the old notes app to function and look better with the new design
 - Add formatting on the notes form for more isp's (clink in particular)
@@ -139,7 +147,6 @@ TODO for next update:
 -Add right click to close the browser tabs and maybe an 'x' to close as well similar to IE
 -Add Frontier chat functions
 -Add jabber integration (eventually)
--Add a "Window" for a notepad type function
 -Continue working on getting vnet to auto login
 -Function to pull relevent data off the tools and compile it in the notes. 
 -Automatic start of certain diagnostic tools. (Run loopcare, get radius info, etc.)</value>
