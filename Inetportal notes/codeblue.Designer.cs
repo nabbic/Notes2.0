@@ -242,6 +242,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "codeBlueform";
             this.Text = "Frontier > Code Blue";
+            this.Load += new System.EventHandler(this.codeBlueform_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

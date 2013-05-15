@@ -22,7 +22,9 @@ namespace NotesApp
         private string _custName;
         private string _custBtn;
         private string _custCbr;
+        private string _tshootText;
         private string _otherNotes;
+        private string _modemText;
         public notesForm()
         {
             InitializeComponent();
@@ -68,7 +70,7 @@ namespace NotesApp
             }
 
         }
-        public string OtherNotes
+        public string tshootText
         {
             get
             {
@@ -76,12 +78,39 @@ namespace NotesApp
             }
             set
             {
-                _otherNotes = value;
-                tShootText.Text = _otherNotes;
+                _tshootText = value;
+                tShootText.Text  = _tshootText;
             }
 
         }
+        public string otherNotes
+        {
+            get
+            {
+                return otherNotesText.Text;
+            }
+            set
+            {
+                _otherNotes = value;
+                otherNotesText.Text = _otherNotes;
+            }
+
+        }
+        public string modemText
+        {
+            get
+            {
+                return _modemText;
+            }
+            set
+            {
+                _modemText = value;
+                custModemText.Text = _modemText;
+            }
+        }
+
         bool outage = true;
+        string checkBoxesLine;
         private void notesForm_Load(object sender, EventArgs e)
         {
 
@@ -91,8 +120,8 @@ namespace NotesApp
         private void save_button_Click(object sender, EventArgs e)
         {
             
-            //Starts process to process the lgihts checkboxes
-            string checkBoxesLine = "\u2022 LIGHTS: ";
+            //Starts process to process the lights checkboxes
+             checkBoxesLine = "\u2022 LIGHTS: ";
 
             foreach (Control control in pnlCheckBoxes.Controls)
             {
@@ -266,11 +295,7 @@ namespace NotesApp
 
             //To work out CBR same if generate is not pushed on main form.
 
-            string cbrSame = custBtnText.Text;
-            if (cbrSameCbx.Checked)
-            {
-                custCbrText.Text = cbrSame;
-            }
+
             //__________________________________________________________________//
 
             fairpoint fpneForm = new fairpoint(this);
