@@ -46,6 +46,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(parentForm));
             this.mainDock = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.topMenu = new System.Windows.Forms.ToolStrip();
+            this.progressBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.copied_status = new System.Windows.Forms.ToolStripStatusLabel();
+            this.copiedStatus = new System.Windows.Forms.StatusStrip();
             this.windowsButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emptyTextWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,10 +61,7 @@
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ispFunctions = new System.Windows.Forms.ToolStripDropDownButton();
             this.codeBlueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.progressBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.copied_status = new System.Windows.Forms.ToolStripStatusLabel();
-            this.copiedStatus = new System.Windows.Forms.StatusStrip();
+            this.fPNETRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.topMenu.SuspendLayout();
             this.copiedStatus.SuspendLayout();
             this.SuspendLayout();
@@ -136,6 +137,35 @@
             this.topMenu.TabIndex = 2;
             this.topMenu.Text = "toolStrip1";
             // 
+            // progressBar
+            // 
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(100, 16);
+            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
+            // 
+            // copied_status
+            // 
+            this.copied_status.Name = "copied_status";
+            this.copied_status.Size = new System.Drawing.Size(39, 17);
+            this.copied_status.Text = "Status";
+            // 
+            // copiedStatus
+            // 
+            this.copiedStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.progressBar,
+            this.toolStripStatusLabel1,
+            this.copied_status});
+            this.copiedStatus.Location = new System.Drawing.Point(0, 652);
+            this.copiedStatus.Name = "copiedStatus";
+            this.copiedStatus.Size = new System.Drawing.Size(1148, 22);
+            this.copiedStatus.TabIndex = 5;
+            this.copiedStatus.Text = "Status";
+            // 
             // windowsButton
             // 
             this.windowsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -160,7 +190,7 @@
             // emptyTextWindowToolStripMenuItem
             // 
             this.emptyTextWindowToolStripMenuItem.Name = "emptyTextWindowToolStripMenuItem";
-            this.emptyTextWindowToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.emptyTextWindowToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.emptyTextWindowToolStripMenuItem.Text = "Notepad";
             this.emptyTextWindowToolStripMenuItem.Click += new System.EventHandler(this.emptyTextWindowToolStripMenuItem_Click);
             // 
@@ -214,7 +244,8 @@
             // 
             this.ispFunctions.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.ispFunctions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.codeBlueToolStripMenuItem});
+            this.codeBlueToolStripMenuItem,
+            this.fPNETRToolStripMenuItem});
             this.ispFunctions.Image = ((System.Drawing.Image)(resources.GetObject("ispFunctions.Image")));
             this.ispFunctions.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ispFunctions.Name = "ispFunctions";
@@ -228,34 +259,12 @@
             this.codeBlueToolStripMenuItem.Text = "Frontier Code Blue";
             this.codeBlueToolStripMenuItem.Click += new System.EventHandler(this.codeBlueToolStripMenuItem_Click);
             // 
-            // progressBar
+            // fPNETRToolStripMenuItem
             // 
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(100, 16);
-            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
-            // 
-            // copied_status
-            // 
-            this.copied_status.Name = "copied_status";
-            this.copied_status.Size = new System.Drawing.Size(39, 17);
-            this.copied_status.Text = "Status";
-            // 
-            // copiedStatus
-            // 
-            this.copiedStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.progressBar,
-            this.toolStripStatusLabel1,
-            this.copied_status});
-            this.copiedStatus.Location = new System.Drawing.Point(0, 652);
-            this.copiedStatus.Name = "copiedStatus";
-            this.copiedStatus.Size = new System.Drawing.Size(1148, 22);
-            this.copiedStatus.TabIndex = 5;
-            this.copiedStatus.Text = "Status";
+            this.fPNETRToolStripMenuItem.Name = "fPNETRToolStripMenuItem";
+            this.fPNETRToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.fPNETRToolStripMenuItem.Text = "FPNE TR";
+            this.fPNETRToolStripMenuItem.Click += new System.EventHandler(this.fPNETRToolStripMenuItem_Click);
             // 
             // parentForm
             // 
@@ -298,6 +307,7 @@
         private System.Windows.Forms.ToolStripMenuItem logToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fPNETRToolStripMenuItem;
 
     }
 }

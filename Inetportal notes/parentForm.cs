@@ -102,13 +102,49 @@ namespace NotesApp
             codeBlueForm.Show(mainDock, DockState.DockRight);
 
         }
+        //Open Fpne TR Form
+        private void fPNETRToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fairpointTr fairpointTrForm = new fairpointTr();
+            string checkBoxesLine = "Lights: ";
+            foreach (Control control in notesForm.pnlCheckBoxes.Controls)
+            {
+                if (control is CheckBox)
+                {
+                    CheckBox checkBox = (CheckBox)control;
+
+                    if (checkBox.Checked && checkBox.Tag is string)
+                    {
+                        string checkBoxId = (string)checkBox.Tag;
+                        checkBoxesLine += string.Format("{0}, ", checkBoxId);
+
+                    }
+                }
+            }
+            string cbrSame = notesForm.CustBtn;
+            if (notesForm.cbrSameCbx.Checked)
+            {
+                fairpointTrForm.CustCbr = cbrSame;
+            }
+            else
+            {
+                fairpointTrForm.CustCbr = notesForm.CustCbr;
+            }
+            fairpointTrForm.CustName = notesForm.CustName;
+            fairpointTrForm.CustBtn = notesForm.CustBtn;
+            fairpointTrForm.modemCheckBox = checkBoxesLine;
+            fairpointTrForm.tshootText = notesForm.tshootText;
+            fairpointTrForm.otherNotes = notesForm.otherNotes;
+            fairpointTrForm.modemText = notesForm.modemText;
+            fairpointTrForm.Show(mainDock, DockState.DockRight);
+        }   
         //Create new empty text window
         private void emptyTextWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             textWindow textWindow = new textWindow();
             textWindow.Show(mainDock, DockState.DockRight);
         }
-        //Open Log
+        //Open Log form
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             logForm logForm = new logForm();
@@ -119,6 +155,6 @@ namespace NotesApp
         {
             FileInfo fi = new FileInfo("noteslog.txt");
             TextWriter tw = new StreamWriter(fi.Open(FileMode.Truncate, FileAccess.Write, FileShare.ReadWrite));
-        }   
+        }
     }
 }

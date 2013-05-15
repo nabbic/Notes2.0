@@ -63,26 +63,6 @@ namespace NotesApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _397 {
-            get {
-                object obj = ResourceManager.GetObject("397", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _552 {
-            get {
-                object obj = ResourceManager.GetObject("552", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Jeremybennett_Sticky_Note_Pad_And_Pencil_clip_art_medium {
             get {
                 object obj = ResourceManager.GetObject("Jeremybennett_Sticky_Note_Pad_And_Pencil_clip_art_medium", resourceCulture);

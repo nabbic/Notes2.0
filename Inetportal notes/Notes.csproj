@@ -158,6 +158,11 @@
     <Compile Include="logForm.Designer.cs">
       <DependentUpon>logForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="textWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,11 +170,11 @@
       <DependentUpon>textWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="MyLogger.cs" />
-    <Compile Include="fairpoint.cs">
+    <Compile Include="fairpointTr.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fairpoint.designer.cs">
-      <DependentUpon>fairpoint.cs</DependentUpon>
+    <Compile Include="fairpointTr.designer.cs">
+      <DependentUpon>fairpointTr.cs</DependentUpon>
     </Compile>
     <Compile Include="ExtTextBox.cs">
       <SubType>UserControl</SubType>
@@ -242,8 +247,8 @@
     <EmbeddedResource Include="ExtTextBox.resx">
       <DependentUpon>ExtTextBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fairpoint.resx">
-      <DependentUpon>fairpoint.cs</DependentUpon>
+    <EmbeddedResource Include="fairpointTr.resx">
+      <DependentUpon>fairpointTr.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="logForm.resx">
       <DependentUpon>logForm.cs</DependentUpon>
@@ -265,14 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="parentForm.resx">
       <DependentUpon>parentForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,8 +299,6 @@
     <Content Include="custName.gif" />
     <Content Include="note.ico" />
     <EmbeddedResource Include="noteslog.txt" />
-    <None Include="Resources\552.png" />
-    <None Include="Resources\397.jpg" />
     <None Include="Resources\Jeremybennett_Sticky_Note_Pad_And_Pencil_clip_art_medium.png" />
     <None Include="Resources\note.ico" />
   </ItemGroup>

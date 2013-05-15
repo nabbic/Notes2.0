@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fpneBrowser));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,6 +44,7 @@
             this.fpneTrackerTab = new System.Windows.Forms.TabPage();
             this.fpneTrackerBrowser = new System.Windows.Forms.WebBrowser();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.trackerSearchText = new wmgCMS.WaterMarkTextBox();
             this.trackerSearchButton = new System.Windows.Forms.Button();
             this.fpneWikiTab = new System.Windows.Forms.TabPage();
             this.fpneWikiBrowser = new System.Windows.Forms.WebBrowser();
@@ -61,7 +63,6 @@
             this.userBrowser1 = new System.Windows.Forms.WebBrowser();
             this.userDefined = new System.Windows.Forms.TabPage();
             this.userBrowser2 = new System.Windows.Forms.WebBrowser();
-            this.trackerSearchText = new wmgCMS.WaterMarkTextBox();
             this.menuStrip1.SuspendLayout();
             this.fpneTabControl.SuspendLayout();
             this.fpneAdminTab.SuspendLayout();
@@ -233,6 +234,17 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(732, 20);
             this.tableLayoutPanel1.TabIndex = 5;
+            // 
+            // trackerSearchText
+            // 
+            this.trackerSearchText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.trackerSearchText.Location = new System.Drawing.Point(0, 0);
+            this.trackerSearchText.Margin = new System.Windows.Forms.Padding(0);
+            this.trackerSearchText.Name = "trackerSearchText";
+            this.trackerSearchText.Size = new System.Drawing.Size(156, 20);
+            this.trackerSearchText.TabIndex = 0;
+            this.trackerSearchText.WaterMarkColor = System.Drawing.Color.Gray;
+            this.trackerSearchText.WaterMarkText = "Search for BTN or Username";
             // 
             // trackerSearchButton
             // 
@@ -425,17 +437,6 @@
             this.userBrowser2.TabIndex = 1;
             this.userBrowser2.Url = new System.Uri("about:blank", System.UriKind.Absolute);
             // 
-            // trackerSearchText
-            // 
-            this.trackerSearchText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.trackerSearchText.Location = new System.Drawing.Point(0, 0);
-            this.trackerSearchText.Margin = new System.Windows.Forms.Padding(0);
-            this.trackerSearchText.Name = "trackerSearchText";
-            this.trackerSearchText.Size = new System.Drawing.Size(156, 20);
-            this.trackerSearchText.TabIndex = 0;
-            this.trackerSearchText.WaterMarkColor = System.Drawing.Color.Gray;
-            this.trackerSearchText.WaterMarkText = "Search for BTN or Username";
-            // 
             // fpneBrowser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -447,6 +448,7 @@
             | WeifenLuo.WinFormsUI.Docking.DockAreas.Document)));
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HideOnClose = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fpneBrowser";
             this.ShowIcon = false;
             this.Text = "Fpne Browser";

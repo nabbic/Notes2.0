@@ -35,82 +35,46 @@ namespace NotesApp
 
         public string CustName
         {
-            get
-            {
-                return custNameText.Text;
-            }
+            get{return custNameText.Text;}
             set
             {
                 _custName = value;
-                custNameText.Text = _custName;
-            }
-
-        }
+                custNameText.Text = _custName;}}
         public string CustBtn
         {
-            get
-            {
-                return custBtnText.Text;
-            }
+            get{return custBtnText.Text;}
             set
             {
                 _custBtn = value;
-                custBtnText.Text = _custBtn;
-            }
-
-        }
+                custBtnText.Text = _custBtn;}}
         public string CustCbr
         {
-            get
-            {
-                return custCbrText.Text;
-            }
+            get{return custCbrText.Text;}
             set
             {
                 _custCbr = value;
-                custCbrText.Text = _custCbr;
-            }
-
-        }
+                custCbrText.Text = _custCbr;}}
         public string tshootText
         {
-            get
-            {
-                return tShootText.Text;
-            }
+            get{return tShootText.Text;}
             set
             {
                 _tshootText = value;
-                tShootText.Text  = _tshootText;
-            }
-
-        }
+                tShootText.Text  = _tshootText;}}
         public string otherNotes
         {
-            get
-            {
-                return otherNotesText.Text;
-            }
+            get{return otherNotesText.Text;}
             set
             {
                 _otherNotes = value;
-                otherNotesText.Text = _otherNotes;
-            }
-
-        }
+                otherNotesText.Text = _otherNotes;}}
         public string modemText
         {
-            get
-            {
-                return custModemText.Text;
-            }
+            get{return custModemText.Text;}
             set
             {
                 _modemText = value;
-                custModemText.Text = _modemText;
-            }
-        }
-
+                custModemText.Text = _modemText;}}
         bool outage = true;
         string checkBoxesLine;
         //Generate to output and textfile
@@ -228,36 +192,6 @@ namespace NotesApp
             }
             else
                 System.Windows.Forms.MessageBox.Show("Please insert the customer's billing number!", "Information Required");
-        }
-        // Open Fairpoint form
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            //To process checkboxes if generate is not pushed on main form.
-            string checkBoxesLine = "Lights: ";
-            foreach (Control control in pnlCheckBoxes.Controls)
-            {
-                if (control is CheckBox)
-                {
-                    CheckBox checkBox = (CheckBox)control;
-
-                    if (checkBox.Checked && checkBox.Tag is string)
-                    {
-                        string checkBoxId = (string)checkBox.Tag;
-                        checkBoxesLine += string.Format("{0}, ", checkBoxId);
-                        checkBoxes = checkBoxesLine;
-                    }
-                }
-            }
-
-            //__________________________________________________________________//
-
-            //To work out CBR same if generate is not pushed on main form.
-
-
-            //__________________________________________________________________//
-
-            fairpoint fpneForm = new fairpoint(this);
-            fpneForm.Show();
         }
         //Checkbox to check if CBR and BTN are the same
         private void cbrSameCbx_CheckedChanged(object sender, EventArgs e)

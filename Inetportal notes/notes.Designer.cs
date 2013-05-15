@@ -59,7 +59,6 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.frontierButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.outageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.faitpointFormButton = new System.Windows.Forms.ToolStripButton();
             this.copied_status = new System.Windows.Forms.ToolStripLabel();
             this.noModemChkbox = new System.Windows.Forms.CheckBox();
             this.tshootingLabel = new System.Windows.Forms.Label();
@@ -397,7 +396,6 @@
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.frontierButton,
-            this.faitpointFormButton,
             this.copied_status});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -423,15 +421,6 @@
             this.outageToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.outageToolStripMenuItem.Text = "Outage";
             this.outageToolStripMenuItem.Click += new System.EventHandler(this.outageToolStripMenuItem_Click);
-            // 
-            // faitpointFormButton
-            // 
-            this.faitpointFormButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.faitpointFormButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.faitpointFormButton.Name = "faitpointFormButton";
-            this.faitpointFormButton.Size = new System.Drawing.Size(58, 22);
-            this.faitpointFormButton.Text = "Fairpoint";
-            this.faitpointFormButton.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // copied_status
             // 
@@ -715,7 +704,6 @@
         public wmgCMS.WaterMarkTextBox svcsOfferedText;
         public wmgCMS.WaterMarkTextBox otherNotesText;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton faitpointFormButton;
         private System.Windows.Forms.CheckBox noModemChkbox;
         private System.Windows.Forms.CheckBox activityChkbox;
         private System.Windows.Forms.ToolStripDropDownButton frontierButton;
