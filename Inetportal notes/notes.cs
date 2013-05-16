@@ -25,14 +25,15 @@ namespace NotesApp
         private string _tshootText;
         private string _otherNotes;
         private string _modemText;
-
+        public event EventHandler OnDataAvailable;
+        public string CopiedStatus { get; private set; }
+        public int Progressbar { get; private set; }
         public notesForm()
         {
             InitializeComponent();
-            
-    
-        }
 
+        }
+        
         public string CustName
         {
             get{return custNameText.Text;}
@@ -75,13 +76,13 @@ namespace NotesApp
             {
                 _modemText = value;
                 custModemText.Text = _modemText;}}
-        bool outage = true;
+
         string checkBoxesLine;
         //Generate to output and textfile
         private void save_button_Click(object sender, EventArgs e)
-        {
+        { 
             //Starts process to process the lights checkboxes
-             checkBoxesLine = "\u2022 LIGHTS: ";
+            checkBoxesLine = "\u2022 LIGHTS: ";
             foreach (Control control in pnlCheckBoxes.Controls)
             {
                 if (control is CheckBox)
@@ -92,7 +93,10 @@ namespace NotesApp
                     {
                         string checkBoxId = (string)checkBox.Tag;
                         checkBoxesLine += string.Format("{0}, ", checkBoxId);
-                        checkBoxes = checkBoxesLine;}}}
+                        checkBoxes = checkBoxesLine;
+                    }
+                }
+            }
             //Starts the Stringbuilder
             System.Text.StringBuilder strBuilder = new System.Text.StringBuilder();
             {
@@ -121,18 +125,19 @@ namespace NotesApp
                 //Continues textboxes to stringbuilder
                 strBuilder.AppendLine("\u2022 TROUBLESHOOTING: " + tShootText.Text);
                 strBuilder.AppendLine();
-                if (outage == true)
-                {
                 strBuilder.AppendLine("\u2022 SERVICES OFFERED: " + svcsOfferedText.Text);
                 strBuilder.AppendLine();
                 strBuilder.AppendLine("\u2022 OTHER NOTES: " + otherNotesText.Text);
-                }
                 notesViewText.Text = strBuilder.ToString();
                 //Copy output to clipboard
                 System.Windows.Forms.Clipboard.SetText(notesViewText.Text);
                 // create a writer and open the file
                 //TextWriter tw = new StreamWriter("noteslog.txt");
                 // write a line of text to the file
+                this.CopiedStatus = "Notes Copied/Saved";
+                this.Progressbar = 0;
+                this.Progressbar = 100;
+                
                 using (TextWriter tr = new StreamWriter(new FileStream(AppDomain.CurrentDomain.BaseDirectory + "noteslog.txt", FileMode.Append, FileAccess.Write, FileShare.ReadWrite)))
                 {
                     {
@@ -146,7 +151,15 @@ namespace NotesApp
                         tr.WriteLine("\u2022 OTHER NOTES: " + otherNotesText.Text);
                         tr.WriteLine("*******************************");
                         // close the stream
-                        tr.Close();}}}}
+                        tr.Close();
+                    }
+                }
+                if (OnDataAvailable != null)
+                    OnDataAvailable(this, EventArgs.Empty);
+            }
+
+            
+        }
         //Button to reset entire form
         private void reset_form_button_Click(object sender, EventArgs e)
         {
@@ -170,7 +183,11 @@ namespace NotesApp
                 otherNotesText.Clear();
                 notesViewText.Clear();
                 cbrSameCbx.Checked = false;
-                this.outage = true;
+                this.CopiedStatus = "Form Reset";
+                this.Progressbar = 100;
+                this.Progressbar = 0;
+                if (OnDataAvailable != null)
+                    OnDataAvailable(this, EventArgs.Empty);
             }
             catch (Exception ex)
             {
@@ -181,6 +198,12 @@ namespace NotesApp
         private void copy_context_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Clipboard.SetText(notesViewText.Text);
+            this.CopiedStatus = "Copied";
+            this.Progressbar = 0;
+            this.Progressbar = 100;
+            
+            if (OnDataAvailable != null)
+                OnDataAvailable(this, EventArgs.Empty);
         }
         //Button to copy BTN to Clipboard and remove the "-" from the number
         private void copyBtn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -192,6 +215,12 @@ namespace NotesApp
             }
             else
                 System.Windows.Forms.MessageBox.Show("Please insert the customer's billing number!", "Information Required");
+            this.CopiedStatus = "Copied BTN.";
+            this.Progressbar = 0;
+            this.Progressbar = 100;
+            
+            if (OnDataAvailable != null)
+                OnDataAvailable(this, EventArgs.Empty);
         }
         //Checkbox to check if CBR and BTN are the same
         private void cbrSameCbx_CheckedChanged(object sender, EventArgs e)
@@ -250,10 +279,11 @@ namespace NotesApp
         //Menu button to sue for outages
         private void outageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tShootText.Text += "\r" + "Cx currently in an outage area. Advised cx of the outage and any information we have currently regarding it.";
-             this.outage = true;
-             noModemChkbox.Checked = true;
 
+        }
+
+        private void notesForm_Load(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -56,10 +56,6 @@
             this.custBtnText = new System.Windows.Forms.MaskedTextBox();
             this.copyBtn = new System.Windows.Forms.LinkLabel();
             this.cbrTooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.frontierButton = new System.Windows.Forms.ToolStripDropDownButton();
-            this.outageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copied_status = new System.Windows.Forms.ToolStripLabel();
             this.noModemChkbox = new System.Windows.Forms.CheckBox();
             this.tshootingLabel = new System.Windows.Forms.Label();
             this.layoutTable = new System.Windows.Forms.TableLayoutPanel();
@@ -70,7 +66,6 @@
             this.custNameText = new wmgCMS.WaterMarkTextBox();
             this.pnlCheckBoxes.SuspendLayout();
             this.notesViewContext.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             this.layoutTable.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -329,7 +324,7 @@
             this.notesViewText.Name = "notesViewText";
             this.layoutTable.SetRowSpan(this.notesViewText, 12);
             this.notesViewText.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.notesViewText.Size = new System.Drawing.Size(154, 572);
+            this.notesViewText.Size = new System.Drawing.Size(154, 573);
             this.notesViewText.TabIndex = 22;
             this.notesViewText.Text = "";
             // 
@@ -390,43 +385,6 @@
         "o web.");
             this.copyBtn.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.copyBtn_LinkClicked);
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.AllowItemReorder = true;
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.frontierButton,
-            this.copied_status});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(336, 25);
-            this.toolStrip1.TabIndex = 23;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // frontierButton
-            // 
-            this.frontierButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.frontierButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.outageToolStripMenuItem});
-            this.frontierButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.frontierButton.Name = "frontierButton";
-            this.frontierButton.Size = new System.Drawing.Size(61, 22);
-            this.frontierButton.Text = "Frontier";
-            this.frontierButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            // 
-            // outageToolStripMenuItem
-            // 
-            this.outageToolStripMenuItem.Name = "outageToolStripMenuItem";
-            this.outageToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
-            this.outageToolStripMenuItem.Text = "Outage";
-            this.outageToolStripMenuItem.Click += new System.EventHandler(this.outageToolStripMenuItem_Click);
-            // 
-            // copied_status
-            // 
-            this.copied_status.Name = "copied_status";
-            this.copied_status.Size = new System.Drawing.Size(0, 22);
-            // 
             // noModemChkbox
             // 
             this.noModemChkbox.AutoSize = true;
@@ -472,12 +430,12 @@
             this.layoutTable.Controls.Add(this.cbrSameCbx, 1, 3);
             this.layoutTable.Controls.Add(this.copyBtn, 1, 0);
             this.layoutTable.Controls.Add(this.saveButton, 0, 11);
-            this.layoutTable.Controls.Add(this.resetButton, 1, 11);
             this.layoutTable.Controls.Add(this.custNameText, 0, 4);
             this.layoutTable.Controls.Add(this.custCbrText, 0, 3);
             this.layoutTable.Controls.Add(this.label2, 0, 0);
+            this.layoutTable.Controls.Add(this.resetButton, 1, 11);
             this.layoutTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutTable.Location = new System.Drawing.Point(0, 25);
+            this.layoutTable.Location = new System.Drawing.Point(0, 0);
             this.layoutTable.Margin = new System.Windows.Forms.Padding(0);
             this.layoutTable.Name = "layoutTable";
             this.layoutTable.RowCount = 11;
@@ -646,11 +604,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(336, 603);
+            this.ClientSize = new System.Drawing.Size(336, 578);
             this.CloseButton = false;
             this.CloseButtonVisible = false;
             this.Controls.Add(this.layoutTable);
-            this.Controls.Add(this.toolStrip1);
+            this.DockAreas = ((WeifenLuo.WinFormsUI.Docking.DockAreas)((((WeifenLuo.WinFormsUI.Docking.DockAreas.Float | WeifenLuo.WinFormsUI.Docking.DockAreas.DockLeft) 
+            | WeifenLuo.WinFormsUI.Docking.DockAreas.DockRight) 
+            | WeifenLuo.WinFormsUI.Docking.DockAreas.Document)));
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HideOnClose = true;
@@ -662,15 +622,13 @@
             this.TabText = "Notes";
             this.Text = "Notes";
             this.TransparencyKey = System.Drawing.Color.GreenYellow;
+            this.Load += new System.EventHandler(this.notesForm_Load);
             this.pnlCheckBoxes.ResumeLayout(false);
             this.pnlCheckBoxes.PerformLayout();
             this.notesViewContext.ResumeLayout(false);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.layoutTable.ResumeLayout(false);
             this.layoutTable.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -703,16 +661,12 @@
         public wmgCMS.WaterMarkTextBox custModemText;
         public wmgCMS.WaterMarkTextBox svcsOfferedText;
         public wmgCMS.WaterMarkTextBox otherNotesText;
-        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.CheckBox noModemChkbox;
         private System.Windows.Forms.CheckBox activityChkbox;
-        private System.Windows.Forms.ToolStripDropDownButton frontierButton;
         private System.Windows.Forms.Label tshootingLabel;
         public ExtTextBox tShootText;
-        private System.Windows.Forms.ToolStripMenuItem outageToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel layoutTable;
         public System.Windows.Forms.MaskedTextBox custBtnText;
-        private System.Windows.Forms.ToolStripLabel copied_status;
         private System.Windows.Forms.LinkLabel copyBtn;
     }
 }

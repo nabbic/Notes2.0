@@ -13,7 +13,6 @@ namespace NotesApp
 {
     public partial class logForm : DockContent
     {
-        private string logString;
         public logForm()
         {
             InitializeComponent();
@@ -38,16 +37,17 @@ namespace NotesApp
                     }
                     else
                     {
-                        TextReader reader = new StreamReader(new FileStream(AppDomain.CurrentDomain.BaseDirectory + "noteslog.txt", FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite)) ;
+                        TextReader reader = new StreamReader(new FileStream(AppDomain.CurrentDomain.BaseDirectory + "noteslog.txt", FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite));
                         {
-                            
-                           logText.Text = reader.ReadToEnd();
+                            logText.Text = reader.ReadToEnd();
+                            logText.SelectionStart = logText.Text.Length;
+                            logText.ScrollToCaret();
                             reader.Close();
                         }
                     }
                 }
-
             }
+            
         }
     }
 }

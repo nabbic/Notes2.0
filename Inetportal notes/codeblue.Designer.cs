@@ -58,7 +58,7 @@
             "Missed commitment",
             "Repeat commitment",
             "Executive complaint"});
-            this.reasonCombo.Location = new System.Drawing.Point(0, 35);
+            this.reasonCombo.Location = new System.Drawing.Point(-1, 38);
             this.reasonCombo.Name = "reasonCombo";
             this.reasonCombo.Size = new System.Drawing.Size(108, 21);
             this.reasonCombo.TabIndex = 4;
@@ -69,7 +69,7 @@
             this.cust_wtn_label.AutoSize = true;
             this.cust_wtn_label.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cust_wtn_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cust_wtn_label.Location = new System.Drawing.Point(0, 85);
+            this.cust_wtn_label.Location = new System.Drawing.Point(1, 88);
             this.cust_wtn_label.Name = "cust_wtn_label";
             this.cust_wtn_label.Size = new System.Drawing.Size(69, 12);
             this.cust_wtn_label.TabIndex = 7;
@@ -79,7 +79,7 @@
             // 
             this.cust_cbr_label.AutoSize = true;
             this.cust_cbr_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cust_cbr_label.Location = new System.Drawing.Point(0, 123);
+            this.cust_cbr_label.Location = new System.Drawing.Point(1, 126);
             this.cust_cbr_label.Name = "cust_cbr_label";
             this.cust_cbr_label.Size = new System.Drawing.Size(68, 12);
             this.cust_cbr_label.TabIndex = 9;
@@ -87,16 +87,16 @@
             // 
             // cbViewText
             // 
-            this.cbViewText.Location = new System.Drawing.Point(113, 12);
+            this.cbViewText.Location = new System.Drawing.Point(114, 12);
             this.cbViewText.Name = "cbViewText";
-            this.cbViewText.Size = new System.Drawing.Size(165, 309);
+            this.cbViewText.Size = new System.Drawing.Size(168, 305);
             this.cbViewText.TabIndex = 23;
             this.cbViewText.Text = "";
             // 
             // copyButton
             // 
             this.copyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.copyButton.Location = new System.Drawing.Point(91, 476);
+            this.copyButton.Location = new System.Drawing.Point(94, 436);
             this.copyButton.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.copyButton.Name = "copyButton";
             this.copyButton.Size = new System.Drawing.Size(95, 23);
@@ -110,7 +110,7 @@
             // cbCbrText
             // 
             this.cbCbrText.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.cbCbrText.Location = new System.Drawing.Point(0, 138);
+            this.cbCbrText.Location = new System.Drawing.Point(-1, 141);
             this.cbCbrText.Mask = "999-000-0000";
             this.cbCbrText.Name = "cbCbrText";
             this.cbCbrText.Size = new System.Drawing.Size(108, 20);
@@ -119,7 +119,7 @@
             // cbWtnText
             // 
             this.cbWtnText.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.cbWtnText.Location = new System.Drawing.Point(0, 100);
+            this.cbWtnText.Location = new System.Drawing.Point(-1, 103);
             this.cbWtnText.Mask = "999-000-0000";
             this.cbWtnText.Name = "cbWtnText";
             this.cbWtnText.Size = new System.Drawing.Size(108, 20);
@@ -128,7 +128,7 @@
             // cbTechText
             // 
             this.cbTechText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cbTechText.Location = new System.Drawing.Point(0, 12);
+            this.cbTechText.Location = new System.Drawing.Point(-1, 12);
             this.cbTechText.Name = "cbTechText";
             this.cbTechText.Size = new System.Drawing.Size(108, 20);
             this.cbTechText.TabIndex = 33;
@@ -138,7 +138,7 @@
             // cbNameText
             // 
             this.cbNameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cbNameText.Location = new System.Drawing.Point(0, 62);
+            this.cbNameText.Location = new System.Drawing.Point(-1, 65);
             this.cbNameText.Name = "cbNameText";
             this.cbNameText.Size = new System.Drawing.Size(108, 20);
             this.cbNameText.TabIndex = 34;
@@ -148,7 +148,7 @@
             // cbEmailText
             // 
             this.cbEmailText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cbEmailText.Location = new System.Drawing.Point(0, 164);
+            this.cbEmailText.Location = new System.Drawing.Point(-1, 167);
             this.cbEmailText.Name = "cbEmailText";
             this.cbEmailText.Size = new System.Drawing.Size(108, 20);
             this.cbEmailText.TabIndex = 35;
@@ -158,7 +158,7 @@
             // cbStreetText
             // 
             this.cbStreetText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cbStreetText.Location = new System.Drawing.Point(0, 193);
+            this.cbStreetText.Location = new System.Drawing.Point(-1, 193);
             this.cbStreetText.Name = "cbStreetText";
             this.cbStreetText.Size = new System.Drawing.Size(108, 20);
             this.cbStreetText.TabIndex = 36;
@@ -168,7 +168,7 @@
             // cbCityText
             // 
             this.cbCityText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cbCityText.Location = new System.Drawing.Point(0, 219);
+            this.cbCityText.Location = new System.Drawing.Point(-1, 219);
             this.cbCityText.Name = "cbCityText";
             this.cbCityText.Size = new System.Drawing.Size(108, 20);
             this.cbCityText.TabIndex = 37;
@@ -178,7 +178,7 @@
             // cbStateText
             // 
             this.cbStateText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cbStateText.Location = new System.Drawing.Point(0, 245);
+            this.cbStateText.Location = new System.Drawing.Point(-1, 245);
             this.cbStateText.Name = "cbStateText";
             this.cbStateText.Size = new System.Drawing.Size(108, 20);
             this.cbStateText.TabIndex = 38;
@@ -188,7 +188,7 @@
             // cbZipText
             // 
             this.cbZipText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cbZipText.Location = new System.Drawing.Point(0, 271);
+            this.cbZipText.Location = new System.Drawing.Point(-1, 271);
             this.cbZipText.Name = "cbZipText";
             this.cbZipText.Size = new System.Drawing.Size(108, 20);
             this.cbZipText.TabIndex = 39;
@@ -198,7 +198,7 @@
             // cbDpiText
             // 
             this.cbDpiText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cbDpiText.Location = new System.Drawing.Point(0, 297);
+            this.cbDpiText.Location = new System.Drawing.Point(-1, 297);
             this.cbDpiText.Name = "cbDpiText";
             this.cbDpiText.Size = new System.Drawing.Size(108, 20);
             this.cbDpiText.TabIndex = 40;
@@ -208,11 +208,11 @@
             // cbNotesText
             // 
             this.cbNotesText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cbNotesText.Location = new System.Drawing.Point(0, 324);
+            this.cbNotesText.Location = new System.Drawing.Point(3, 320);
             this.cbNotesText.Margin = new System.Windows.Forms.Padding(0);
             this.cbNotesText.Multiline = true;
             this.cbNotesText.Name = "cbNotesText";
-            this.cbNotesText.Size = new System.Drawing.Size(278, 141);
+            this.cbNotesText.Size = new System.Drawing.Size(279, 116);
             this.cbNotesText.TabIndex = 41;
             this.cbNotesText.WaterMarkColor = System.Drawing.Color.Gray;
             this.cbNotesText.WaterMarkText = "Full Notes";
@@ -221,7 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(287, 508);
+            this.ClientSize = new System.Drawing.Size(287, 462);
             this.Controls.Add(this.cbNotesText);
             this.Controls.Add(this.cbDpiText);
             this.Controls.Add(this.cbZipText);
@@ -238,6 +238,9 @@
             this.Controls.Add(this.cust_cbr_label);
             this.Controls.Add(this.cust_wtn_label);
             this.Controls.Add(this.reasonCombo);
+            this.DockAreas = ((WeifenLuo.WinFormsUI.Docking.DockAreas)((((WeifenLuo.WinFormsUI.Docking.DockAreas.Float | WeifenLuo.WinFormsUI.Docking.DockAreas.DockLeft) 
+            | WeifenLuo.WinFormsUI.Docking.DockAreas.DockRight) 
+            | WeifenLuo.WinFormsUI.Docking.DockAreas.Document)));
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
