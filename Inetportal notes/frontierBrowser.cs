@@ -123,7 +123,21 @@ namespace NotesApp
             {
                 addressBar.Text = goControl.Url.ToString();
             }
+         userBrowser1.DocumentTitleChanged += userBrowser1_DocumentTitleChanged;
+        userBrowser2.DocumentTitleChanged += userBrowser2_DocumentTitleChanged;
         }
+
+        void userBrowser2_DocumentTitleChanged(object sender, EventArgs e)
+        {
+            userDefined2.Text = userBrowser2.DocumentTitle;
+
+        }
+
+        void userBrowser1_DocumentTitleChanged(object sender, EventArgs e)
+        {
+            UserDefined1.Text = userBrowser1.DocumentTitle;
+        }
+        
         //Back button
         private void backToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -185,6 +199,11 @@ namespace NotesApp
             });
             vnetBrowserThread.SetApartmentState(ApartmentState.STA);
             vnetBrowserThread.Start();
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

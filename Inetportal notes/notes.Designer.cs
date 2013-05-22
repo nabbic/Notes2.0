@@ -319,12 +319,12 @@
             // notesViewText
             // 
             this.notesViewText.ContextMenuStrip = this.notesViewContext;
-            this.notesViewText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.notesViewText.Dock = System.Windows.Forms.DockStyle.Top;
             this.notesViewText.Location = new System.Drawing.Point(179, 3);
             this.notesViewText.Name = "notesViewText";
             this.layoutTable.SetRowSpan(this.notesViewText, 12);
             this.notesViewText.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.notesViewText.Size = new System.Drawing.Size(154, 573);
+            this.notesViewText.Size = new System.Drawing.Size(163, 573);
             this.notesViewText.TabIndex = 22;
             this.notesViewText.Text = "";
             // 
@@ -416,7 +416,7 @@
             this.layoutTable.ColumnCount = 3;
             this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102F));
             this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
-            this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169F));
             this.layoutTable.Controls.Add(this.label3, 0, 2);
             this.layoutTable.Controls.Add(this.custBtnText, 0, 1);
             this.layoutTable.Controls.Add(this.otherNotesText, 0, 10);
@@ -451,7 +451,7 @@
             this.layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.layoutTable.Size = new System.Drawing.Size(336, 578);
+            this.layoutTable.Size = new System.Drawing.Size(345, 578);
             this.layoutTable.TabIndex = 56;
             // 
             // otherNotesText
@@ -603,8 +603,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(336, 578);
+            this.ClientSize = new System.Drawing.Size(345, 578);
             this.CloseButton = false;
             this.CloseButtonVisible = false;
             this.Controls.Add(this.layoutTable);

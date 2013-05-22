@@ -23,17 +23,22 @@ namespace NotesApp
             if (opentext.ShowDialog() == DialogResult.OK)
             {
                 richTextBox1.Text = File.ReadAllText(opentext.FileName);
-
+                this.Text = opentext.SafeFileName.ToString();
             }
         }
 
         private void openTextFile_FormClosing(object sender, FormClosingEventArgs e)
         {
-            saveFile.ShowDialog();
-            opentext.FileName = saveFile.FileName;
-            File.WriteAllText(saveFile.FileName, richTextBox1.Text);
-
+            DialogResult result = MessageBox.Show("Save file before closing?", "Save File?", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                saveFileDialog1.ShowDialog();
+                richTextBox1.SaveFile(saveFileDialog1.FileName, RichTextBoxStreamType.PlainText);
+                if (result == DialogResult.No)
+                {
+                    this.Close();
+                }
+            }
         }
-    
     }
 }

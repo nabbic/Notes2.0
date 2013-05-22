@@ -41,7 +41,7 @@ namespace NotesApp
             fpneTrackerBrowser.Navigate("http://tracker.telenetwork.com/tracker/gobetween.plx?searchby=uname&submit=Search&looky=" + searchKey);
             
         }
-        //Login **Needs to be coded**
+        //Login
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fpneWikiBrowser.Navigate("http://wiki.telenetwork.com/index.php/FairPoint_NE");
@@ -155,7 +155,21 @@ namespace NotesApp
             WebBrowser goControl = fpneTabControl.SelectedTab.Controls.OfType<WebBrowser>().FirstOrDefault();
             goControl.Navigate(addressBar.Text);
             addressBar.Text = goControl.Url.ToString();
+            userBrowser1.DocumentTitleChanged += userBrowser1_DocumentTitleChanged;
+            userBrowser2.DocumentTitleChanged += userBrowser2_DocumentTitleChanged;
         }
+
+        void userBrowser2_DocumentTitleChanged(object sender, EventArgs e)
+        {
+            userDefined2.Text = userBrowser2.DocumentTitle;
+
+        }
+
+        void userBrowser1_DocumentTitleChanged(object sender, EventArgs e)
+        {
+            UserDefined1.Text = userBrowser1.DocumentTitle;
+        }
+        
         //Update address bar
         private void fpneTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -177,5 +191,12 @@ namespace NotesApp
         {
             
         }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+
     }
 }

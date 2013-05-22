@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frontierBrowser));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,11 +56,13 @@
             this.lolaBrowser = new System.Windows.Forms.WebBrowser();
             this.billingLookupTab = new System.Windows.Forms.TabPage();
             this.billingLookupBrowser = new System.Windows.Forms.WebBrowser();
-            this.UserDefinedTab = new System.Windows.Forms.TabPage();
+            this.UserDefined1 = new System.Windows.Forms.TabPage();
             this.userBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.userDefined = new System.Windows.Forms.TabPage();
+            this.userDefined2 = new System.Windows.Forms.TabPage();
             this.userBrowser2 = new System.Windows.Forms.WebBrowser();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.frontierTabInner.SuspendLayout();
             this.inetTab.SuspendLayout();
@@ -69,9 +72,10 @@
             this.cdpiTab.SuspendLayout();
             this.lolaTab.SuspendLayout();
             this.billingLookupTab.SuspendLayout();
-            this.UserDefinedTab.SuspendLayout();
-            this.userDefined.SuspendLayout();
+            this.UserDefined1.SuspendLayout();
+            this.userDefined2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -166,8 +170,8 @@
             this.frontierTabInner.Controls.Add(this.cdpiTab);
             this.frontierTabInner.Controls.Add(this.lolaTab);
             this.frontierTabInner.Controls.Add(this.billingLookupTab);
-            this.frontierTabInner.Controls.Add(this.UserDefinedTab);
-            this.frontierTabInner.Controls.Add(this.userDefined);
+            this.frontierTabInner.Controls.Add(this.UserDefined1);
+            this.frontierTabInner.Controls.Add(this.userDefined2);
             this.frontierTabInner.Dock = System.Windows.Forms.DockStyle.Fill;
             this.frontierTabInner.HotTrack = true;
             this.frontierTabInner.Location = new System.Drawing.Point(3, 3);
@@ -335,16 +339,16 @@
             this.billingLookupBrowser.TabIndex = 0;
             this.billingLookupBrowser.Url = new System.Uri("", System.UriKind.Relative);
             // 
-            // UserDefinedTab
+            // UserDefined1
             // 
-            this.UserDefinedTab.Controls.Add(this.userBrowser1);
-            this.UserDefinedTab.Location = new System.Drawing.Point(4, 25);
-            this.UserDefinedTab.Name = "UserDefinedTab";
-            this.UserDefinedTab.Padding = new System.Windows.Forms.Padding(3);
-            this.UserDefinedTab.Size = new System.Drawing.Size(732, 328);
-            this.UserDefinedTab.TabIndex = 7;
-            this.UserDefinedTab.Text = "Custom Tab 1";
-            this.UserDefinedTab.UseVisualStyleBackColor = true;
+            this.UserDefined1.Controls.Add(this.userBrowser1);
+            this.UserDefined1.Location = new System.Drawing.Point(4, 25);
+            this.UserDefined1.Name = "UserDefined1";
+            this.UserDefined1.Padding = new System.Windows.Forms.Padding(3);
+            this.UserDefined1.Size = new System.Drawing.Size(732, 328);
+            this.UserDefined1.TabIndex = 7;
+            this.UserDefined1.Text = "Custom Tab 1";
+            this.UserDefined1.UseVisualStyleBackColor = true;
             // 
             // userBrowser1
             // 
@@ -356,16 +360,16 @@
             this.userBrowser1.TabIndex = 0;
             this.userBrowser1.Url = new System.Uri("about:blank", System.UriKind.Absolute);
             // 
-            // userDefined
+            // userDefined2
             // 
-            this.userDefined.Controls.Add(this.userBrowser2);
-            this.userDefined.Location = new System.Drawing.Point(4, 25);
-            this.userDefined.Name = "userDefined";
-            this.userDefined.Padding = new System.Windows.Forms.Padding(3);
-            this.userDefined.Size = new System.Drawing.Size(732, 328);
-            this.userDefined.TabIndex = 8;
-            this.userDefined.Text = "Custom Tab 2";
-            this.userDefined.UseVisualStyleBackColor = true;
+            this.userDefined2.Controls.Add(this.userBrowser2);
+            this.userDefined2.Location = new System.Drawing.Point(4, 25);
+            this.userDefined2.Name = "userDefined2";
+            this.userDefined2.Padding = new System.Windows.Forms.Padding(3);
+            this.userDefined2.Size = new System.Drawing.Size(732, 328);
+            this.userDefined2.TabIndex = 8;
+            this.userDefined2.Text = "Custom Tab 2";
+            this.userDefined2.UseVisualStyleBackColor = true;
             // 
             // userBrowser2
             // 
@@ -390,6 +394,20 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(746, 363);
             this.tableLayoutPanel1.TabIndex = 10;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.closeToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(104, 26);
+            // 
+            // closeToolStripMenuItem
+            // 
+            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.closeToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
+            // 
             // frontierBrowser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -406,6 +424,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frontierBrowser";
             this.ShowIcon = false;
+            this.TabPageContextMenuStrip = this.contextMenuStrip1;
             this.TabText = "Frontier Broswer";
             this.Text = "Browser";
             this.menuStrip1.ResumeLayout(false);
@@ -418,9 +437,10 @@
             this.cdpiTab.ResumeLayout(false);
             this.lolaTab.ResumeLayout(false);
             this.billingLookupTab.ResumeLayout(false);
-            this.UserDefinedTab.ResumeLayout(false);
-            this.userDefined.ResumeLayout(false);
+            this.UserDefined1.ResumeLayout(false);
+            this.userDefined2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -452,13 +472,15 @@
         public System.Windows.Forms.WebBrowser lolaBrowser;
         public System.Windows.Forms.TabPage billingLookupTab;
         public System.Windows.Forms.WebBrowser billingLookupBrowser;
-        public System.Windows.Forms.TabPage UserDefinedTab;
+        public System.Windows.Forms.TabPage UserDefined1;
         public System.Windows.Forms.WebBrowser userBrowser1;
-        public System.Windows.Forms.TabPage userDefined;
+        public System.Windows.Forms.TabPage userDefined2;
         public System.Windows.Forms.WebBrowser userBrowser2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ToolStripMenuItem jWALKToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
 
 
     }

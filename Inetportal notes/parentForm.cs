@@ -41,6 +41,8 @@ namespace NotesApp
         }
         //Set Instance of front browser
         private frontierBrowser frontierBrowser = new frontierBrowser();
+        //Set Instance of sw browser
+        private sureWest sureWest = new sureWest();
         //set instance of fpne browser
         private fpneBrowser fpneBrowser = new fpneBrowser();
         //set instance of log form
@@ -52,7 +54,7 @@ namespace NotesApp
             showStartForms();
         }
         //Load the browsers
-        private void loadBrowsers()
+        private void loadBrowsersInstance()
         {
             logForm logForm = new logForm();
             logForm.Show(mainDock, DockState.DockRight);
@@ -63,29 +65,9 @@ namespace NotesApp
             fpneBrowser fpneBrowser = new fpneBrowser();
             fpneBrowser.Show(mainDock, DockState.Document);
             fpneBrowser.Hide();
-        }
-        //Load new front browser
-        private void frontierBrowserToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (frontierBrowser.IsHidden)
-            {
-                frontierBrowser.Show(mainDock, DockState.Document);
-                copied_status.Text = "Frontier Browser Loaded";
-                progressBar.Value = 0;
-                progressBar.Value = 100;
-            }
-
-        }
-        //Load new fpne browser
-        private void fPNEBrowserToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (fpneBrowser.IsHidden)
-            {
-                fpneBrowser.Show(mainDock, DockState.Document);
-                copied_status.Text = "FPNE Browser Loaded";
-                progressBar.Value = 0;
-                progressBar.Value = 100;
-            }
+            sureWest sureWest = new sureWest();
+            sureWest.Show(mainDock, DockState.Document);
+            sureWest.Hide();
         }
         //Open and send data to code blue form from notes form
         private void codeBlueToolStripMenuItem_Click(object sender, EventArgs e)
@@ -125,44 +107,6 @@ namespace NotesApp
             copied_status.Text = "Code Blue Form Loaded";
             progressBar.Value = 100;
         }
-        //Open Fpne TR Form
-        private void fPNETRToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fairpointTr fairpointTrForm = new fairpointTr();
-            string checkBoxesLine = "Lights: ";
-            foreach (Control control in notesForm.pnlCheckBoxes.Controls)
-            {
-                if (control is CheckBox)
-                {
-                    CheckBox checkBox = (CheckBox)control;
-
-                    if (checkBox.Checked && checkBox.Tag is string)
-                    {
-                        string checkBoxId = (string)checkBox.Tag;
-                        checkBoxesLine += string.Format("{0}, ", checkBoxId);
-
-                    }
-                }
-            }
-            string cbrSame = notesForm.CustBtn;
-            if (notesForm.cbrSameCbx.Checked)
-            {
-                fairpointTrForm.CustCbr = cbrSame;
-            }
-            else
-            {
-                fairpointTrForm.CustCbr = notesForm.CustCbr;
-            }
-            fairpointTrForm.CustName = notesForm.CustName;
-            fairpointTrForm.CustBtn = notesForm.CustBtn;
-            fairpointTrForm.modemCheckBox = checkBoxesLine;
-            fairpointTrForm.tshootText = notesForm.tshootText;
-            fairpointTrForm.otherNotes = notesForm.otherNotes;
-            fairpointTrForm.modemText = notesForm.modemText;
-            fairpointTrForm.Show(mainDock, DockState.DockRight);
-            copied_status.Text = "FPNE TR Form Loaded";
-            progressBar.Value = 100;
-        }   
         //Create new empty text window
         private void emptyTextWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -193,10 +137,90 @@ namespace NotesApp
             progressBar.Value = 0;
             progressBar.Value = 100;
         }
+        //Open new text file
         private void textFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openTextFile newTextFile = new openTextFile();
             newTextFile.Show(mainDock, DockState.DockRight);
         }
+        //Exit Application
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        //Load fpne TR form
+        private void fPNETRToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            {
+                fairpointTr fairpointTrForm = new fairpointTr();
+                string checkBoxesLine = "Lights: ";
+                foreach (Control control in notesForm.pnlCheckBoxes.Controls)
+                {
+                    if (control is CheckBox)
+                    {
+                        CheckBox checkBox = (CheckBox)control;
+
+                        if (checkBox.Checked && checkBox.Tag is string)
+                        {
+                            string checkBoxId = (string)checkBox.Tag;
+                            checkBoxesLine += string.Format("{0}, ", checkBoxId);
+
+                        }
+                    }
+                }
+                string cbrSame = notesForm.CustBtn;
+                if (notesForm.cbrSameCbx.Checked)
+                {
+                    fairpointTrForm.CustCbr = cbrSame;
+                }
+                else
+                {
+                    fairpointTrForm.CustCbr = notesForm.CustCbr;
+                }
+                fairpointTrForm.CustName = notesForm.CustName;
+                fairpointTrForm.CustBtn = notesForm.CustBtn;
+                fairpointTrForm.modemCheckBox = checkBoxesLine;
+                fairpointTrForm.tshootText = notesForm.tshootText;
+                fairpointTrForm.otherNotes = notesForm.otherNotes;
+                fairpointTrForm.modemText = notesForm.modemText;
+                fairpointTrForm.Show(mainDock, DockState.DockRight);
+                copied_status.Text = "FPNE TR Form Loaded";
+                progressBar.Value = 100;
+            }
+        }
+        //Load fpne browser
+        private void fPNEBrowserToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (fpneBrowser.IsHidden)
+            {
+                fpneBrowser.Show(mainDock, DockState.Document);
+                copied_status.Text = "FPNE Browser Loaded";
+                progressBar.Value = 0;
+                progressBar.Value = 100;
+            }
+        }
+        //Load frontier browser
+        private void frontierBrowserToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (frontierBrowser.IsHidden)
+            {
+                frontierBrowser.Show(mainDock, DockState.Document);
+                copied_status.Text = "Frontier Browser Loaded";
+                progressBar.Value = 0;
+                progressBar.Value = 100;
+            }
+        }
+        //Surewest Browser
+        private void sureWestBrowserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (sureWest.IsHidden)
+            {
+                sureWest.Show(mainDock, DockState.Document);
+                copied_status.Text = "SureWest Browser Loaded";
+                progressBar.Value = 0;
+                progressBar.Value = 100;
+            }
+        }
+        
     }
 }

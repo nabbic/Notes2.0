@@ -32,7 +32,7 @@
     <WebPage>install.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>18</ApplicationRevision>
+    <ApplicationRevision>20</ApplicationRevision>
     <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -127,6 +127,12 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="RemoteViewing">
+      <HintPath>..\packages\RemoteViewing.0.9.1\lib\RemoteViewing.dll</HintPath>
+    </Reference>
+    <Reference Include="RemoteViewing.Windows.Forms">
+      <HintPath>..\packages\RemoteViewing.0.9.1\lib\RemoteViewing.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -140,6 +146,10 @@
     <Reference Include="UIAutomationClient" />
     <Reference Include="UIAutomationProvider" />
     <Reference Include="UIAutomationTypes" />
+    <Reference Include="VncSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=61974755c7bfea7c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>vncsharp-1.0-bin\VncSharp.dll</HintPath>
+    </Reference>
     <Reference Include="WatiN.Core, Version=2.1.0.1196, Culture=neutral, PublicKeyToken=db7cfd3acb5ad44e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\WatiN.2.1.0\lib\net40\WatiN.Core.dll</HintPath>
@@ -174,6 +184,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="sureWest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sureWest.Designer.cs">
+      <DependentUpon>sureWest.cs</DependentUpon>
     </Compile>
     <Compile Include="textWindow.cs">
       <SubType>Form</SubType>
@@ -263,6 +279,9 @@
     <EmbeddedResource Include="openTextFile.resx">
       <DependentUpon>openTextFile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="sureWest.resx">
+      <DependentUpon>sureWest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="textWindow.resx">
       <DependentUpon>textWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -349,7 +368,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_UpdateAssemblyVersion="True" BuildVersion_UpdateFileVersion="True" />
+      <UserProperties BuildVersion_UpdateFileVersion="True" BuildVersion_UpdateAssemblyVersion="True" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

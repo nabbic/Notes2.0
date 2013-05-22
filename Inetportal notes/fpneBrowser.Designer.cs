@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fpneBrowser));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,13 +38,13 @@
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fpneTabControl = new System.Windows.Forms.TabControl();
             this.fpneAdminTab = new System.Windows.Forms.TabPage();
             this.fpneAdminBrowser = new System.Windows.Forms.WebBrowser();
             this.fpneTrackerTab = new System.Windows.Forms.TabPage();
             this.fpneTrackerBrowser = new System.Windows.Forms.WebBrowser();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.trackerSearchText = new wmgCMS.WaterMarkTextBox();
             this.trackerSearchButton = new System.Windows.Forms.Button();
             this.fpneWikiTab = new System.Windows.Forms.TabPage();
             this.fpneWikiBrowser = new System.Windows.Forms.WebBrowser();
@@ -58,11 +59,12 @@
             this.securityPortalBrowser = new System.Windows.Forms.WebBrowser();
             this.securityLookupTab = new System.Windows.Forms.TabPage();
             this.securityLookupBrowser = new System.Windows.Forms.WebBrowser();
-            this.UserDefinedTab = new System.Windows.Forms.TabPage();
+            this.UserDefined1 = new System.Windows.Forms.TabPage();
             this.userBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.userDefined = new System.Windows.Forms.TabPage();
+            this.userDefined2 = new System.Windows.Forms.TabPage();
             this.userBrowser2 = new System.Windows.Forms.WebBrowser();
-            this.trackerSearchText = new wmgCMS.WaterMarkTextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.fpneTabControl.SuspendLayout();
             this.fpneAdminTab.SuspendLayout();
@@ -74,8 +76,9 @@
             this.securityAdminTab.SuspendLayout();
             this.securityPortalTab.SuspendLayout();
             this.securityLookupTab.SuspendLayout();
-            this.UserDefinedTab.SuspendLayout();
-            this.userDefined.SuspendLayout();
+            this.UserDefined1.SuspendLayout();
+            this.userDefined2.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -87,8 +90,7 @@
             this.addressBar,
             this.loadToolStripMenuItem,
             this.loginToolStripMenuItem,
-            this.optionsToolStripMenuItem,
-            this.testToolStripMenuItem});
+            this.optionsToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -145,13 +147,6 @@
             this.optionsToolStripMenuItem.Text = "Settings";
             this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
             // 
-            // testToolStripMenuItem
-            // 
-            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.testToolStripMenuItem.Text = "Test";
-            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
-            // 
             // fpneTabControl
             // 
             this.fpneTabControl.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
@@ -163,8 +158,8 @@
             this.fpneTabControl.Controls.Add(this.securityAdminTab);
             this.fpneTabControl.Controls.Add(this.securityPortalTab);
             this.fpneTabControl.Controls.Add(this.securityLookupTab);
-            this.fpneTabControl.Controls.Add(this.UserDefinedTab);
-            this.fpneTabControl.Controls.Add(this.userDefined);
+            this.fpneTabControl.Controls.Add(this.UserDefined1);
+            this.fpneTabControl.Controls.Add(this.userDefined2);
             this.fpneTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fpneTabControl.HotTrack = true;
             this.fpneTabControl.Location = new System.Drawing.Point(0, 24);
@@ -234,6 +229,17 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(732, 20);
             this.tableLayoutPanel1.TabIndex = 5;
+            // 
+            // trackerSearchText
+            // 
+            this.trackerSearchText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.trackerSearchText.Location = new System.Drawing.Point(0, 0);
+            this.trackerSearchText.Margin = new System.Windows.Forms.Padding(0);
+            this.trackerSearchText.Name = "trackerSearchText";
+            this.trackerSearchText.Size = new System.Drawing.Size(156, 20);
+            this.trackerSearchText.TabIndex = 0;
+            this.trackerSearchText.WaterMarkColor = System.Drawing.Color.Gray;
+            this.trackerSearchText.WaterMarkText = "Search for BTN or Username";
             // 
             // trackerSearchButton
             // 
@@ -384,16 +390,16 @@
             this.securityLookupBrowser.TabIndex = 0;
             this.securityLookupBrowser.Url = new System.Uri("", System.UriKind.Relative);
             // 
-            // UserDefinedTab
+            // UserDefined1
             // 
-            this.UserDefinedTab.Controls.Add(this.userBrowser1);
-            this.UserDefinedTab.Location = new System.Drawing.Point(4, 25);
-            this.UserDefinedTab.Name = "UserDefinedTab";
-            this.UserDefinedTab.Padding = new System.Windows.Forms.Padding(3);
-            this.UserDefinedTab.Size = new System.Drawing.Size(738, 334);
-            this.UserDefinedTab.TabIndex = 7;
-            this.UserDefinedTab.Text = "Custom Tab 1";
-            this.UserDefinedTab.UseVisualStyleBackColor = true;
+            this.UserDefined1.Controls.Add(this.userBrowser1);
+            this.UserDefined1.Location = new System.Drawing.Point(4, 25);
+            this.UserDefined1.Name = "UserDefined1";
+            this.UserDefined1.Padding = new System.Windows.Forms.Padding(3);
+            this.UserDefined1.Size = new System.Drawing.Size(738, 334);
+            this.UserDefined1.TabIndex = 7;
+            this.UserDefined1.Text = "Custom Tab 1";
+            this.UserDefined1.UseVisualStyleBackColor = true;
             // 
             // userBrowser1
             // 
@@ -405,16 +411,16 @@
             this.userBrowser1.TabIndex = 0;
             this.userBrowser1.Url = new System.Uri("about:blank", System.UriKind.Absolute);
             // 
-            // userDefined
+            // userDefined2
             // 
-            this.userDefined.Controls.Add(this.userBrowser2);
-            this.userDefined.Location = new System.Drawing.Point(4, 25);
-            this.userDefined.Name = "userDefined";
-            this.userDefined.Padding = new System.Windows.Forms.Padding(3);
-            this.userDefined.Size = new System.Drawing.Size(738, 334);
-            this.userDefined.TabIndex = 8;
-            this.userDefined.Text = "Custom Tab 2";
-            this.userDefined.UseVisualStyleBackColor = true;
+            this.userDefined2.Controls.Add(this.userBrowser2);
+            this.userDefined2.Location = new System.Drawing.Point(4, 25);
+            this.userDefined2.Name = "userDefined2";
+            this.userDefined2.Padding = new System.Windows.Forms.Padding(3);
+            this.userDefined2.Size = new System.Drawing.Size(738, 334);
+            this.userDefined2.TabIndex = 8;
+            this.userDefined2.Text = "Custom Tab 2";
+            this.userDefined2.UseVisualStyleBackColor = true;
             // 
             // userBrowser2
             // 
@@ -426,16 +432,19 @@
             this.userBrowser2.TabIndex = 1;
             this.userBrowser2.Url = new System.Uri("about:blank", System.UriKind.Absolute);
             // 
-            // trackerSearchText
+            // contextMenuStrip1
             // 
-            this.trackerSearchText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.trackerSearchText.Location = new System.Drawing.Point(0, 0);
-            this.trackerSearchText.Margin = new System.Windows.Forms.Padding(0);
-            this.trackerSearchText.Name = "trackerSearchText";
-            this.trackerSearchText.Size = new System.Drawing.Size(156, 20);
-            this.trackerSearchText.TabIndex = 0;
-            this.trackerSearchText.WaterMarkColor = System.Drawing.Color.Gray;
-            this.trackerSearchText.WaterMarkText = "Search for BTN or Username";
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.closeToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(104, 26);
+            // 
+            // closeToolStripMenuItem
+            // 
+            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.closeToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // fpneBrowser
             // 
@@ -452,6 +461,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fpneBrowser";
             this.ShowIcon = false;
+            this.TabPageContextMenuStrip = this.contextMenuStrip1;
             this.Text = "Fpne Browser";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -466,8 +476,9 @@
             this.securityAdminTab.ResumeLayout(false);
             this.securityPortalTab.ResumeLayout(false);
             this.securityLookupTab.ResumeLayout(false);
-            this.UserDefinedTab.ResumeLayout(false);
-            this.userDefined.ResumeLayout(false);
+            this.UserDefined1.ResumeLayout(false);
+            this.userDefined2.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -499,15 +510,16 @@
         public System.Windows.Forms.WebBrowser securityPortalBrowser;
         public System.Windows.Forms.TabPage securityLookupTab;
         public System.Windows.Forms.WebBrowser securityLookupBrowser;
-        public System.Windows.Forms.TabPage UserDefinedTab;
+        public System.Windows.Forms.TabPage UserDefined1;
         public System.Windows.Forms.WebBrowser userBrowser1;
-        public System.Windows.Forms.TabPage userDefined;
+        public System.Windows.Forms.TabPage userDefined2;
         public System.Windows.Forms.WebBrowser userBrowser2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private wmgCMS.WaterMarkTextBox trackerSearchText;
         private System.Windows.Forms.Button trackerSearchButton;
         public System.Windows.Forms.TabPage fpneTrackerTab;
         private System.Windows.Forms.WebBrowser fpneTrackerBrowser;
-        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
     }
 }
