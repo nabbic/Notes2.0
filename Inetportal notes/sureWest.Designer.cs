@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(sureWest));
             this.swTabControl = new System.Windows.Forms.TabControl();
             this.swTrackerTab = new System.Windows.Forms.TabPage();
             this.swTrackerBrowser = new System.Windows.Forms.WebBrowser();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.trackerSearchText = new wmgCMS.WaterMarkTextBox();
             this.trackerSearchButton = new System.Windows.Forms.Button();
+            this.novaResTab = new System.Windows.Forms.TabPage();
+            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.swWikiTab = new System.Windows.Forms.TabPage();
             this.swWikiBrowser = new System.Windows.Forms.WebBrowser();
             this.hiddenJwalkBrowser = new System.Windows.Forms.WebBrowser();
@@ -57,14 +59,19 @@
             this.addressBar = new System.Windows.Forms.ToolStripTextBox();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sotrmWatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.connectStormMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.disconnectStormMEnu = new System.Windows.Forms.ToolStripMenuItem();
             this.loginStormMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.novaRes = new System.Windows.Forms.ToolStripMenuItem();
+            this.novaConnect = new System.Windows.Forms.ToolStripMenuItem();
+            this.novaDisconnect = new System.Windows.Forms.ToolStripMenuItem();
+            this.addTabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trackerSearchText = new wmgCMS.WaterMarkTextBox();
             this.swTabControl.SuspendLayout();
             this.swTrackerTab.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.novaResTab.SuspendLayout();
             this.swWikiTab.SuspendLayout();
             this.ispTools.SuspendLayout();
             this.quickTicket.SuspendLayout();
@@ -79,6 +86,7 @@
             // 
             this.swTabControl.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.swTabControl.Controls.Add(this.swTrackerTab);
+            this.swTabControl.Controls.Add(this.novaResTab);
             this.swTabControl.Controls.Add(this.swWikiTab);
             this.swTabControl.Controls.Add(this.ispTools);
             this.swTabControl.Controls.Add(this.quickTicket);
@@ -135,17 +143,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(732, 20);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
-            // trackerSearchText
-            // 
-            this.trackerSearchText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.trackerSearchText.Location = new System.Drawing.Point(0, 0);
-            this.trackerSearchText.Margin = new System.Windows.Forms.Padding(0);
-            this.trackerSearchText.Name = "trackerSearchText";
-            this.trackerSearchText.Size = new System.Drawing.Size(156, 20);
-            this.trackerSearchText.TabIndex = 0;
-            this.trackerSearchText.WaterMarkColor = System.Drawing.Color.Gray;
-            this.trackerSearchText.WaterMarkText = "Search for BTN or Username";
-            // 
             // trackerSearchButton
             // 
             this.trackerSearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -158,6 +155,27 @@
             this.trackerSearchButton.Text = "Search";
             this.trackerSearchButton.UseVisualStyleBackColor = true;
             this.trackerSearchButton.Click += new System.EventHandler(this.trackerSearchButton_Click);
+            // 
+            // novaResTab
+            // 
+            this.novaResTab.Controls.Add(this.webBrowser2);
+            this.novaResTab.Location = new System.Drawing.Point(4, 25);
+            this.novaResTab.Name = "novaResTab";
+            this.novaResTab.Padding = new System.Windows.Forms.Padding(3);
+            this.novaResTab.Size = new System.Drawing.Size(738, 334);
+            this.novaResTab.TabIndex = 11;
+            this.novaResTab.Text = "Nova Res";
+            this.novaResTab.UseVisualStyleBackColor = true;
+            // 
+            // webBrowser2
+            // 
+            this.webBrowser2.Location = new System.Drawing.Point(3, 218);
+            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser2.Name = "webBrowser2";
+            this.webBrowser2.Size = new System.Drawing.Size(124, 113);
+            this.webBrowser2.TabIndex = 1;
+            this.webBrowser2.Url = new System.Uri("about:blank", System.UriKind.Absolute);
+            this.webBrowser2.Visible = false;
             // 
             // swWikiTab
             // 
@@ -338,11 +356,14 @@
             this.addressBar,
             this.loadToolStripMenuItem,
             this.loginToolStripMenuItem,
-            this.optionsToolStripMenuItem,
-            this.sotrmWatchToolStripMenuItem});
+            this.sotrmWatchToolStripMenuItem,
+            this.novaRes,
+            this.addTabToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(0);
+            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.menuStrip1.Size = new System.Drawing.Size(746, 24);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
@@ -350,21 +371,21 @@
             // backToolStripMenuItem
             // 
             this.backToolStripMenuItem.Name = "backToolStripMenuItem";
-            this.backToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.backToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.backToolStripMenuItem.Text = "Back";
             this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
             // 
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
             this.refreshToolStripMenuItem.Text = "Refresh";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // goToolStripMenuItem
             // 
             this.goToolStripMenuItem.Name = "goToolStripMenuItem";
-            this.goToolStripMenuItem.Size = new System.Drawing.Size(34, 20);
+            this.goToolStripMenuItem.Size = new System.Drawing.Size(34, 24);
             this.goToolStripMenuItem.Text = "Go";
             this.goToolStripMenuItem.Click += new System.EventHandler(this.goToolStripMenuItem_Click);
             // 
@@ -372,28 +393,21 @@
             // 
             this.addressBar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.addressBar.Name = "addressBar";
-            this.addressBar.Size = new System.Drawing.Size(300, 20);
+            this.addressBar.Size = new System.Drawing.Size(300, 24);
             this.addressBar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.addressBar_KeyDown);
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(45, 24);
             this.loadToolStripMenuItem.Text = "Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.loginToolStripMenuItem.Text = "Login";
-            // 
-            // optionsToolStripMenuItem
-            // 
-            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.optionsToolStripMenuItem.Text = "Settings";
-            this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
             // 
             // sotrmWatchToolStripMenuItem
             // 
@@ -402,13 +416,13 @@
             this.disconnectStormMEnu,
             this.loginStormMenu});
             this.sotrmWatchToolStripMenuItem.Name = "sotrmWatchToolStripMenuItem";
-            this.sotrmWatchToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+            this.sotrmWatchToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
             this.sotrmWatchToolStripMenuItem.Text = "StormWatch";
             // 
             // connectStormMenu
             // 
             this.connectStormMenu.Name = "connectStormMenu";
-            this.connectStormMenu.Size = new System.Drawing.Size(152, 22);
+            this.connectStormMenu.Size = new System.Drawing.Size(133, 22);
             this.connectStormMenu.Text = "Connect";
             this.connectStormMenu.Click += new System.EventHandler(this.connectToolStrip_Click);
             // 
@@ -416,7 +430,7 @@
             // 
             this.disconnectStormMEnu.Enabled = false;
             this.disconnectStormMEnu.Name = "disconnectStormMEnu";
-            this.disconnectStormMEnu.Size = new System.Drawing.Size(152, 22);
+            this.disconnectStormMEnu.Size = new System.Drawing.Size(133, 22);
             this.disconnectStormMEnu.Text = "Disconnect";
             this.disconnectStormMEnu.Click += new System.EventHandler(this.disconnectToolStripMenuItem_Click);
             // 
@@ -424,9 +438,51 @@
             // 
             this.loginStormMenu.Enabled = false;
             this.loginStormMenu.Name = "loginStormMenu";
-            this.loginStormMenu.Size = new System.Drawing.Size(152, 22);
+            this.loginStormMenu.Size = new System.Drawing.Size(133, 22);
             this.loginStormMenu.Text = "Login";
             this.loginStormMenu.Click += new System.EventHandler(this.loginToolStripStormWatch_Click);
+            // 
+            // novaRes
+            // 
+            this.novaRes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.novaConnect,
+            this.novaDisconnect});
+            this.novaRes.Name = "novaRes";
+            this.novaRes.Padding = new System.Windows.Forms.Padding(0);
+            this.novaRes.Size = new System.Drawing.Size(57, 24);
+            this.novaRes.Text = "NovaRes";
+            // 
+            // novaConnect
+            // 
+            this.novaConnect.Name = "novaConnect";
+            this.novaConnect.Size = new System.Drawing.Size(133, 22);
+            this.novaConnect.Text = "Connect";
+            this.novaConnect.Click += new System.EventHandler(this.novaConnect_Click);
+            // 
+            // novaDisconnect
+            // 
+            this.novaDisconnect.Name = "novaDisconnect";
+            this.novaDisconnect.Size = new System.Drawing.Size(133, 22);
+            this.novaDisconnect.Text = "Disconnect";
+            this.novaDisconnect.Click += new System.EventHandler(this.novaDisconnect_Click);
+            // 
+            // addTabToolStripMenuItem
+            // 
+            this.addTabToolStripMenuItem.Name = "addTabToolStripMenuItem";
+            this.addTabToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
+            this.addTabToolStripMenuItem.Text = "Add Tab";
+            this.addTabToolStripMenuItem.Click += new System.EventHandler(this.addTabToolStripMenuItem_Click);
+            // 
+            // trackerSearchText
+            // 
+            this.trackerSearchText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.trackerSearchText.Location = new System.Drawing.Point(0, 0);
+            this.trackerSearchText.Margin = new System.Windows.Forms.Padding(0);
+            this.trackerSearchText.Name = "trackerSearchText";
+            this.trackerSearchText.Size = new System.Drawing.Size(156, 20);
+            this.trackerSearchText.TabIndex = 0;
+            this.trackerSearchText.WaterMarkColor = System.Drawing.Color.Gray;
+            this.trackerSearchText.WaterMarkText = "Search for BTN or Username";
             // 
             // sureWest
             // 
@@ -437,6 +493,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HideOnClose = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "sureWest";
             this.Text = "SureWest Browser";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.sureWest_FormClosing);
@@ -444,6 +501,7 @@
             this.swTrackerTab.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.novaResTab.ResumeLayout(false);
             this.swWikiTab.ResumeLayout(false);
             this.ispTools.ResumeLayout(false);
             this.quickTicket.ResumeLayout(false);
@@ -486,7 +544,6 @@
         public System.Windows.Forms.ToolStripTextBox addressBar;
         private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.TabPage stormWatchTab;
         private System.Windows.Forms.ToolStripMenuItem sotrmWatchToolStripMenuItem;
         private System.Windows.Forms.WebBrowser webBrowser1;
@@ -494,5 +551,11 @@
         private System.Windows.Forms.ToolStripMenuItem connectStormMenu;
         private VncSharp.RemoteDesktop stormWatchControl;
         private System.Windows.Forms.ToolStripMenuItem disconnectStormMEnu;
+        private System.Windows.Forms.ToolStripMenuItem addTabToolStripMenuItem;
+        private System.Windows.Forms.TabPage novaResTab;
+        private System.Windows.Forms.ToolStripMenuItem novaRes;
+        private System.Windows.Forms.ToolStripMenuItem novaConnect;
+        private System.Windows.Forms.ToolStripMenuItem novaDisconnect;
+        private System.Windows.Forms.WebBrowser webBrowser2;
     }
 }

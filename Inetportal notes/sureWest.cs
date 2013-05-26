@@ -16,6 +16,7 @@ using System.Windows.Automation;
 using WatiN.Core.Native.Windows;
 using VncSharp;
 
+
 namespace NotesApp
 {
     public partial class sureWest : DockContent
@@ -24,6 +25,9 @@ namespace NotesApp
         {
             InitializeComponent();
         }
+        private TabPage[] customTab = new TabPage[100];
+        private WebBrowser[] webBrowserCustom = new WebBrowser[100];
+        int i = 0;
         //Back Button
         private void backToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -186,5 +190,57 @@ swTabControl.SelectedTab.Controls.OfType<WebBrowser>().FirstOrDefault();
                 MessageBoxIcon.Information);
             FlipMenuOptions();
         }
-    }
+
+        private void addTabToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            customTab[i] = new TabPage();
+            customTab[i].Text = "New Tab";
+            webBrowserCustom[i] = new WebBrowser();
+            webBrowserCustom[i].Dock = DockStyle.Fill;
+            webBrowserCustom[i].Navigate("about:blank");
+            
+            customTab[i].Controls.Add(webBrowserCustom[i]);
+            customTab[i].Name = "customTab" + i.ToString();
+            swTabControl.TabPages.Add(customTab[i]);
+            i++;
+        }
+        private void novaConnect_Click(object sender, EventArgs e)
+        {
+        
+            try
+            {
+                //rdp.Server = "FFWIN2008R2DC.fflab123.net";
+                //rdp.Domain = "fflab123";
+                //rdp.UserName = "administrator";
+                
+                //rdp.OnConnected += rdp_OnConnected;
+                ////rdp.RemoteProgram.RemoteProgramMode = true;
+                ////rdp.RemoteProgram2.RemoteApplicationName = "Calculator";
+                ////rdp.RemoteProgram2.RemoteApplicationProgram = @"C:\Windows\system32\calc.exe";
+                
+                //rdp.Connect();   
+  
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Error Connecting", "Error connecting to remote desktop " + " Error:  " + Ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
 }
+
+        void rdp_OnConnected(object sender, EventArgs e)
+        {
+            //rdp.SecuredSettings.StartProgram = @"C:\Windows\System32\calc.exe";
+            
+
+        }
+
+        private void novaDisconnect_Click(object sender, EventArgs e)
+        {
+
+            
+            }
+        }
+
+    }
+
